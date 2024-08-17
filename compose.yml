@@ -1,6 +1,19 @@
 version: "3.9"
 
 services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongoDb
+      - rabbitMq
+    networks:
+      - btgpactual_network
   mongoDb:
     image: mongo
     restart: always
@@ -9,11 +22,19 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
+    networks:
+      - btgpactual_network
   rabbitMq:
     image: rabbitmq:3-management
     ports:
       - "5672:5672"
       - "15672:15672"
+    networks:
+      - btgpactual_network
 
 volumes:
   mongoData:
+
+networks:
+  btgpactual_network:
+    driver: bridge
