@@ -34,7 +34,7 @@ public class BtgPactualConsumer {
   }
 
   private static Order parseMessageToOrder(Pedido pedido){
-    Set<OrderItem> itens = new HashSet<OrderItem>();
+    List<OrderItem> itens = new ArrayList<OrderItem>();
     for(ItemPedido itemPedido: pedido.getItens()){
       itens.add(OrderItem.builder().name(itemPedido.getProduto()).price(itemPedido.getPreco()).quantity(itemPedido.getQuantidade()).build());
     }

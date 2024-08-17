@@ -9,8 +9,6 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
-    volumes:
-      - ./:/data/db
   rabbitMq:
     image: rabbitmq:3-management
     ports:

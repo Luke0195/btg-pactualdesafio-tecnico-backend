@@ -1,6 +1,7 @@
 package br.com.btgpactual.app.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -24,5 +25,5 @@ public class Order implements Serializable {
   @MongoId
   private Integer orderId;
   private Integer clientId;
-  private Set<OrderItem> itens;
+  private List<OrderItem> itens;
 }

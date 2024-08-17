@@ -18,7 +18,7 @@ import java.io.*;
 @Getter
 @Setter
 public class OrderResponseDto implements Serializable{
-  private BigDecimal totalValue;
+  private Double totalValue;
   private Integer totalOrders;
   private List<OrderItem> itens;
 }
