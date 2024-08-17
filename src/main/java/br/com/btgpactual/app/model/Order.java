@@ -11,16 +11,18 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
+@ToString
 @Document(collection = "orders")
 public class Order implements Serializable {
   @MongoId
   private Integer orderId;
   private Integer clientId;
-  private Set<Order> itens;
+  private Set<OrderItem> itens;
 }

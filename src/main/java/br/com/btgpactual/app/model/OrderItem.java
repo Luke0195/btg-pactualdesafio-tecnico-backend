@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter
 public class OrderItem implements Serializable {
     private String name;
-    private String quantity;
+    private Integer quantity;
     private BigDecimal price;
     
 }
